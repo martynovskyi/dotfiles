@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+
+command=$1
+
+if [[ "pull" == "$command" ]]; then
+  echo "info | Pulling local NEOVIM configs"
+  nvim --version
+
+  cp -r ~/.config/nvim/ ../.config/nvim
+
+  rm ../.config/nvim/lazy-lock.json
+  echo "info | Pulling completed"
+  exit 0
+fi
+  
+
+
+echo "error | Unknown or missing command"
+exit 1
