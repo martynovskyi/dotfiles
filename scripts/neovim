@@ -1,5 +1,4 @@
-#!/usr/bin/env bash
-
+#!/bin/bash
 
 command=$1
 
@@ -14,7 +13,14 @@ if [[ "pull" == "$command" ]]; then
   exit 0
 fi
   
-
+if [[ "push" == "$command" ]]; then
+  echo "info | Pushing configs into local setup"
+  cp -r ~/.config/nvim/ ~/.config/nvim.backup/
+  echo "info | Backup config in .config/nvim.backup"
+  rm -rf ~/.config/nvim/
+  cp -r ../.config/nvim/ ~/.config/nvim
+  echo "info | NEOVIM configuration pushed"
+fi
 
 echo "error | Unknown or missing command"
 exit 1
