@@ -3,24 +3,24 @@
 command=$1
 
 if [[ "pull" == "$command" ]]; then
-  echo "info | Pulling local NEOVIM configs"
-  nvim --version
+    echo "info | Pulling local NEOVIM configs"
+    nvim --version
 
-  cp -r ~/.config/nvim/ ../.config/nvim
+    cp -r ~/.config/nvim/ ../.config/nvim
 
-  rm ../.config/nvim/lazy-lock.json
-  echo "info | Pulling completed"
-  exit 0
+    rm ../.config/nvim/lazy-lock.json
+    echo "info | Pulling completed"
+    exit 0
 fi
   
 if [[ "push" == "$command" ]]; then
-  echo "info | Pushing configs into local setup"
-  cp -r ~/.config/nvim/ ~/.config/nvim.backup/
-  echo "info | Backup config in .config/nvim.backup"
-  rm -rf ~/.config/nvim/
-  cp -r ../.config/nvim/ ~/.config/nvim
-  echo "info | NEOVIM configuration pushed"
-  exit 0 
+    echo "info | Pushing configs into local setup"
+    cp -r ~/.config/nvim/ ~/.config/nvim.backup/
+    echo "info | Backup config in .config/nvim.backup"
+    rm -rf ~/.config/nvim/
+    cp -r ../.config/nvim/ ~/.config/nvim
+    echo "info | NEOVIM configuration pushed"
+    exit 0 
 fi
 
 echo "error | Unknown or missing command"
