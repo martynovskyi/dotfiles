@@ -20,7 +20,7 @@ if [[ "push" == "$command" ]]; then
   rm -rf ~/.config/nvim/
   cp -r ../.config/nvim/ ~/.config/nvim
   echo "info | NEOVIM configuration pushed"
-  exit o
+  exit 0 
 fi
 
 echo "error | Unknown or missing command"
