@@ -7,3 +7,5 @@ vim.g.mapleader = " "
 
 require("config.lazy")
 require("config.lsp")
+
+vim.cmd.colorscheme 'melange'
