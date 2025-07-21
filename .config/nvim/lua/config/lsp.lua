@@ -1,6 +1,8 @@
 vim.lsp.enable({
     "lua-ls",
     "rust-analyzer",
+    "gradle_ls",
+
 })
 
 vim.diagnostic.config({
